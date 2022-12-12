@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nilla</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Nunito:wght@200&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        margin-top: 20px;
+      }
+      body {
+        font-family: "Nunito", sans-serif;
+        background-color: #dbd7d9;
+      }
+      header {
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.4),
+            rgba(0, 0, 0, 0.5)
+          ),
+          url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/055/984/original/hero.jpeg?1669923386");
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: white;
+        text-align: center;
+        padding: 200px 0;
+      }
+      .navbar-logo {
+        max-width: 60px;
+        border-radius: 50%;
+        max-height: 60px;
+      }
+
+      header h1 {
+        font-family: "Berkshire Swash", cursive;
+        font-size: 128px;
+        line-height: 1;
+        margin: 30px 0;
+      }
+
+      header h3 {
+        font-size: 20px;
+        line-height: 1.5;
+        letter-spacing: 4px;
+        margin: 0;
+      }
+
+      section {
+        background-color: #ebd3ea;
+        margin: 0 auto;
+        padding: 100px;
+      }
+
+      section.secondary {
+        background-color: #f4f3f3;
+        margin: 0 auto;
+        padding: 100px;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 2fr 2fr;
+        grid-gap: 64px;
+      }
+      .grid-3-columns-with-first-narrow {
+        grid-template-columns: 1fr 2fr 2fr;
+      }
+
+      .card-h6 {
+        color: rgb(255, 147, 232);
+      }
+
+      .btn-article {
+        border: #b1bed5 dotted 2px;
+        background-color: rgba(191, 216, 213, 0.3);
+      }
+
+      .btn-article:hover {
+        background-color: rgba(221, 228, 249, 0.7);
+      }
+
+      .grid-3-columns {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+
+      .card {
+        margin: 30px 0px;
+      }
+
+      .card img {
+        max-width: 100%;
+      }
+
+      .card h5 {
+        font-weight: bold;
+      }
+      footer {
+        color: #323232;
+      }
+      footer h3 {
+        font-family: "Playfair Display";
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 1;
+      }
+      footer p {
+        font-weight: 400;
+        font-size: 16px;
+        opacity: 0.7;
+
+        line-height: 24px;
+      }
+
+      footer ul {
+        padding: 0;
+      }
+
+      footer li {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      footer a {
+        color: #323232;
+        opacity: 0.7;
+      }
+
+      .text-wrapper {
+        position: relative;
+        font-size: 128px;
+      }
+
+      span.nilla {
+        font-family: "Berkshire Swash", cursive;
+        position: relative;
+        display: inline-block;
+        letter-spacing: 10px;
+        animation: waveAnim 1s infinite;
+        animation-delay: calc(0.1s * var(--i));
+      }
+
+      @keyframes waveAnim {
+        0%,
+        40%,
+        100% {
+          transform: translateY(0);
+        }
+        20% {
+          transform: translateY(-40px);
+        }
+      }
+      @media (max-width: 960px) {
+        header {
+          padding: 60px 0;
+        }
+
+        header h1 {
+          font-size: 64px;
+        }
+
+        header h2 {
+          font-size: 15px;
+        }
+        .grid {
+          grid-template-columns: 1fr;
+          grid-gap: 32px;
+        }
+        section {
+          padding: 30px;
+        }
+
+        span.nilla {
+          font-size: 64px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-expand-lg navbar-light"
+      style="background-color: #f4f3f3"
+    >
+      <div class="container-fluid">
+        <div class="navbar-brand" href="#">
+          <img
+            src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/055/975/original/logo.jpg?1669922736"
+            alt="logo"
+            class="navbar-logo"
+          />
+          The Nilla Chronicles
+        </div>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link" href="#">The Blog</a>
+            <a class="nav-link" href="#">About Nilla</a>
+            <a class="nav-link" href="#">About Me</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <header>
+        <h3>.Welcome to the.</h3>
+        <div class="text-wrapper">
+          <span class="nilla" style="--i: 1">N</span>
+          <span class="nilla" style="--i: 2">i</span>
+          <span class="nilla" style="--i: 3">l</span>
+          <span class="nilla" style="--i: 4">l</span>
+          <span class="nilla" style="--i: 5">a</span>
+        </div>
+        <h1>Chronicles</h1>
+      </header>
+      <main>
+        <section class="secondary">
+          <div class="grid grid-3-columns">
+            <div class="card" style="width: 18rem">
+              <img
+                src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/055/978/original/puppy-1.jpg?1669922758"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h6 class="card-h6">About Nilla</h6>
+                <h5 class="card-title">Hey There I'm Nilla!</h5>
+                <p class="card-text">
+                  All about the fluff ball that can steal a heart in moments...
+                </p>
+                <a href="#" class="btn btn-article">To About Nilla Page</a>
+              </div>
+            </div>
+            <div class="card" style="width: 18rem">
+              <img
+                src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/055/979/original/puppy-3.jpg?1669922766"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h6 class="card-h6">Blog</h6>
+                <h5 class="card-title">First Time Outside!</h5>
+                <p class="card-text">
+                  Nilla showed a whole other side of herself the second her paws
+                  touched the grass. The Girl went WILD. And Its's something
+                  we'll never forget....
+                </p>
+                <a href="#" class="btn btn-article">Read Full Article</a>
+              </div>
+            </div>
+            <div class="card" style="width: 18rem">
+              <img
+                src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/055/981/original/messy.jpg?1669922935"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h6 class="card-h6">Blog</h6>
+                <h5 class="card-title">What a Mess!!</h5>
+                <p class="card-text">
+                  Nilla is quite the cutie, white fluffy fur, but that fur can
+                  be pretty high maintnence. These are the essential tools and
+                  products we use to keep her looking her best...
+                </p>
+                <a href="#" class="btn btn-article">Read Full Article</a>
+              </div>
+            </div>
+            <div class="card" style="width: 18rem">
+              <img
+                src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/055/977/original/potty-mat.jpg?1669922749"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h6 class="card-h6">Blog</h6>
+                <h5 class="card-title">How we potty trained her!</h5>
+                <p class="card-text">
+                  Nilla was too young to wander around outside, and we sure
+                  didnt want her using the restroom inside. So, we bought...
+                </p>
+                <a href="#" class="btn btn-article">Read Full Article</a>
+              </div>
+            </div>
+            <div class="card" style="width: 18rem">
+              <img
+                src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/055/980/original/with-mom.jpg?1669922770"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h6 class="card-h6">About Nilla</h6>
+                <h5 class="card-title">Meet my mom!</h5>
+                <p class="card-text">All about her birth and litter...</p>
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <a href="#" class="btn btn-article">To About Nilla Page</a>
+              </div>
+            </div>
+            <div class="card" style="width: 18rem">
+              <img
+                src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/055/974/original/belly.jpg?1669922352"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h6 class="card-h6">Blog</h6>
+                <h5 class="card-title">Belly!</h5>
+                <p class="card-text">
+                  Nilla loves a good belly rub. This is just one of the few
+                  tricks that we have taught her. This is how we did it....
+                </p>
+                <a href="#" class="btn btn-article">Read Full Article</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer>
+        <section class="grid grid-3-columns-with-first-narrow">
+          <div>
+            <h3>More about SheCodes</h3>
+            <ul>
+              <li>
+                <a href="https://www.shecodes.io/" target="_blank">
+                  Official Website</a
+                >
+              </li>
+              <li>
+                <a href="https://www.shecodes.io/challenges" target="_blank">
+                  SheCodes Challenges</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.shecodes.io/learn/workshops"
+                  target="_blank"
+                  >SheCodes Workshops</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3>About Me</h3>
+            <p>
+              Hi, My name is Jodie! I live in Texas with my family- and Nilla of
+              course! Ive been studying software development over the past few
+              years, and I plan to continue learning and growing in this skill.
+            </p>
+          </div>
+          <div>
+            <h3>About this Website</h3>
+            <p>
+              This page was created as part of a project for SheCodes Challenges
+              to develop my coding skills.
+            </p>
+            <br />
+            <p>
+              <em> This Project was coded by Jodie Ornelas </em>
+            </p>
+          </div>
+        </section>
+      </footer>
+    </div>
+  </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"
+  ></script>
+</html>
